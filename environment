@@ -5,7 +5,7 @@ export CONTECO_DESCRIPTION="The ContEco Kibana base image."
 
 export CONTECO_TYPE="kibana"
 export CONTECO_NAME="base"
-export CONTECO_TAG="6.8.1"
+export CONTECO_TAG="7.1.1"
 
-export CONTECO_BASE="external.kibana:6.8.1"
+export CONTECO_BASE="external.kibana:7.1.1"
 export CONTECO_BUILD="image-base"

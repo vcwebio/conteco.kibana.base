@@ -1,0 +1,23 @@
+---
+version: '3'
+services:
+
+  service:
+##### BEGIN ${CONTECO_TYPE}.${CONTECO_NAME}/docker-compose/service #####
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.${CONTECO_TYPE}.${CONTECO_NAME}:${CONTECO_TAG}
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      SERVER_BASEPATH: /kibana
+##### BEGIN ${CONTECO_TYPE}.${CONTECO_NAME}/docker-compose/service #####
+    environment:
+      SERVER_BASEPATH:
+    ports:
+      - 5601:5601
+    deploy:
+      mode: replicated
+    networks:
+      - ${CONTECO_ECOSYSTEM}_overlay
+
+networks:
+  ${CONTECO_ECOSYSTEM}_overlay:
+    external: true

@@ -2,6 +2,7 @@
 version: '3'
 services:
 
+# START SERVICE kibana.base
   kibana:
     image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.kibana.base:7.1.1
     environment: ['ELASTICSEARCH_HOSTS=${CONTECO_DC_KIBANA_ELASTICSEARCH_HOSTS}', 'SERVER_BASEPATH=${CONTECO_DC_KIBANA_SERVER_BASEPATH}'] 
@@ -10,8 +11,8 @@ services:
     ports: [${CONTECO_DC_KIBANA_PORTS}]
     networks: [${CONTECO_DC_KIBANA_NETWORKS}]
     deploy: {${CONTECO_DC_KIBANA_DEPLOY}}
+# END SERVICE kibana.base
 
 networks:
   ${CONTECO_DC_KIBANA_NETWORKS}:
     external: true
-

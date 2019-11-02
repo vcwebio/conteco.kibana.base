@@ -16,7 +16,7 @@ COPY ./ /conteco/repo/
 
 ##### BEGIN image/Dockerfile/build-instructions #####
 ENV CONTECO_ENTRYPOINT "/usr/local/bin/kibana-docker"
-COPY ./conteco/assets/kibana/base/usr/share/kibana/config/* /usr/share/kibana/config/
+COPY ./conteco/configs/usr/share/kibana/config/* /usr/share/kibana/config/
 ##### END image/Dockerfile/build-instructions #####
 
 ##### BEGIN image.base/Dockerfile/env-labels-footer #####

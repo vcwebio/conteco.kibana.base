@@ -5,11 +5,11 @@ services:
 # START SERVICE kibana.base
   kibana:
     image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.kibana.base:7.1.1
-    environment: ['ELASTICSEARCH_HOSTS=${CONTECO_DC_KIBANA_ENVIRONMENT_ELASTICSEARCH_HOSTS}', 'SERVER_BASEPATH=${CONTECO_DC_KIBANA_ENVIRONMENT_SERVER_BASEPATH}']
+    environment: ['ELASTICSEARCH_HOSTS=http://elasticsearch:9200', 'SERVER_BASEPATH=/${CONTECO_TYPE}/kibana']
     command: []
     volumes: []
-    ports: [${CONTECO_DC_KIBANA_PORTS}]
-    networks: [${CONTECO_DC_KIBANA_NETWORKS}]
+    ports: []
+    networks: [${CONTECO_TYPE}_overlay]
     deploy:
       mode: replicated
       resources:
@@ -19,8 +19,8 @@ services:
         reservations:
           cpus: '${CONTECO_DC_KIBANA_DEPLOY_RESOURCES_RESERVATIONS_CPUS}'
           memory: '${CONTECO_DC_KIBANA_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
-      labels: [${CONTECO_DC_KIBANA_DEPLOY_LABELS}]
+      labels: []
 # END SERVICE kibana.base
 
-volumes: {${CONTECO_DC_GLOBAL_VOLUMES}}
-networks: {${CONTECO_DC_GLOBAL_NETWORKS}}
+volumes: {}
+networks: {${CONTECO_TYPE}_overlay: { external: true }}

@@ -1,13 +1,15 @@
-# The Conteco kibana base
+# `kibana.base` - ContEco
 
-The Kibana base image. 
+ElasticSearch Kibana Base image, with minor configuration change.
+See `conteco.docs.overview` for more information on the ContEco ecosystem.
 
-## Modifications
+## Configuration Changes
 
-None.
+```bash
+# disabled xpack UI
+xpack.monitoring.ui.container.elasticsearch.enabled: false
+```
 
 ## Tags
 
 * 7.1.1
-* 6.8.1
-* 6.6.2  

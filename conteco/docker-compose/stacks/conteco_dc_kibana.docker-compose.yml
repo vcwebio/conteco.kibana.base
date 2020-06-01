@@ -5,7 +5,7 @@ services:
 # START SERVICE kibana.base
   kibana:
     image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.kibana.base:7.1.1
-    environment: ['ELASTICSEARCH_HOSTS=http://elasticsearch:9200', 'SERVER_BASEPATH=/${CONTECO_URLPREFIX}/kibana']
+    environment: ['ELASTICSEARCH_HOSTS=http://elasticsearch:9200','SERVER_BASEPATH=/${CONTECO_URLPREFIX}/kibana']
     command: []
     volumes: []
     ports: []
@@ -22,7 +22,7 @@ services:
           memory: '${CONTECO_DC_KIBANA_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
       placement:
         constraints: [${CONTECO_DC_KIBANA_DEPLOY_PLACEMENT_CONSTRAINTS}]
-      labels: []
+      labels: [${CONTECO_DC_KIBANA_DEPLOY_LABELS}]
     labels: [${CONTECO_DC_KIBANA_LABELS}]
 # END SERVICE kibana.base
 

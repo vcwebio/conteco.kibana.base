@@ -4,7 +4,7 @@ services:
 
 # START SERVICE kibana.base
   kibana:
-    image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.kibana.base:7.1.1
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.kibana.base:7.8.0
     environment: ['ELASTICSEARCH_HOSTS=http://elasticsearch:9200','SERVER_BASEPATH=/${CONTECO_URLPREFIX}/kibana']
     command: []
     volumes: []

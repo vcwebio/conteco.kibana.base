@@ -12,4 +12,5 @@ xpack.monitoring.ui.container.elasticsearch.enabled: false
 
 ## Tags
 
+* 7.8.0 (latest)  
 * 7.1.1

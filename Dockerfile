@@ -15,7 +15,7 @@ COPY ./ /conteco/repo/
 ##### END image/Dockerfile/conteco #####
 
 ##### BEGIN image/Dockerfile/build-instructions #####
-ENV CONTECO_ENTRYPOINT "/usr/local/bin/kibana-docker"
+ENV CONTECO_ENTRYPOINT "/usr/local/bin/kibana-docker --allow-root"
 COPY ./conteco/configs/usr/share/kibana/config/kibana.yml /usr/share/kibana/config/kibana.yml
 ##### END image/Dockerfile/build-instructions #####
 

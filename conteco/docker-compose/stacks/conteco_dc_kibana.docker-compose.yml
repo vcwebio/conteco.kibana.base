@@ -4,11 +4,11 @@ services:
 
 # START SERVICE kibana.base
   kibana:
-    image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.kibana.base:7.8.0
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.kibana.base:7.9.2
     environment: ['ELASTICSEARCH_HOSTS=http://elasticsearch:9200','SERVER_BASEPATH=/${CONTECO_URLPREFIX}/kibana']
     command: []
     volumes: []
-    ports: []
+    ports: [5601:5601]
     networks: [${CONTECO_NETWORKLOCAL}_overlay]
     deploy:
       mode: replicated
